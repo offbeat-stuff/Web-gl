@@ -30,6 +30,11 @@ window.onresize = (ev: UIEvent) => {
 
 document.body.appendChild(gl.canvas as HTMLCanvasElement);
 document.body.appendChild(canvas);
+
+document.addEventListener("dblclick",()=>{
+    openFullscreen()
+});
+
 var program: WebGLProgram;
 createProgram('shaders/base.vs.glsl', 'shaders/base.fs.glsl').then(
     (prog: WebGLProgram) => {

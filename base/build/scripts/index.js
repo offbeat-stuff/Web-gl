@@ -20,6 +20,9 @@ window.onresize = function (ev) {
 };
 document.body.appendChild(gl.canvas);
 document.body.appendChild(canvas);
+document.addEventListener("dblclick", function () {
+    openFullscreen();
+});
 var program;
 createProgram('shaders/base.vs.glsl', 'shaders/base.fs.glsl').then(function (prog) {
     program = prog;
