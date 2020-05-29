@@ -1,19 +1,18 @@
-canvas = document.createElement('canvas');
-gl = document.createElement('canvas').getContext('webgl2');
-ctx = canvas.getContext('2d');
+var cvs = document.createElement('canvas');
+gl = cvs.getContext('webgl2');
 if (!gl) {
     console.log('Webgl-2 not supported');
-    gl = canvas.getContext('webgl');
+    gl = cvs.getContext('webgl');
 }
 if (!gl) {
     alert('Sorry Both WebGL and WebGL2 are not supported and experimental-support is not good so get a better browser maybe.');
 }
-var width = (canvas.width = gl.canvas.width = window.innerWidth);
-var height = (canvas.height = gl.canvas.height = window.innerHeight);
+var width = (gl.canvas.width = window.innerWidth);
+var height = (gl.canvas.height = window.innerHeight);
 gl.viewport(0, 0, width, height);
 window.onresize = function (ev) {
-    var width = (canvas.width = gl.canvas.width = window.innerWidth);
-    var height = (canvas.height = gl.canvas.height = window.innerHeight);
+    var width = (gl.canvas.width = window.innerWidth);
+    var height = (gl.canvas.height = window.innerHeight);
     gl.viewport(0, 0, width, height);
 };
 document.body.appendChild(gl.canvas);
