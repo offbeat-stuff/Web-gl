@@ -19,7 +19,7 @@ window.onresize = function (ev) {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 };
 document.body.appendChild(gl.canvas);
-document.addEventListener("dblclick", function () {
+document.documentElement.addEventListener("dblclick", function () {
     openFullscreen();
 });
 gl.clearDepth(1.0);

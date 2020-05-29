@@ -27,7 +27,7 @@ window.onresize = (ev: UIEvent) => {
 };
 
 document.body.appendChild(gl.canvas as HTMLCanvasElement);
-document.addEventListener("dblclick",()=>{
+document.documentElement.addEventListener("dblclick",()=>{
     openFullscreen();
 })
 
