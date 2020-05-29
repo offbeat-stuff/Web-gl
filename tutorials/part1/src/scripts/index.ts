@@ -1,13 +1,10 @@
-declare var canvas: HTMLCanvasElement;
-canvas = document.createElement('canvas');
 declare var gl: WebGL2RenderingContext | WebGLRenderingContext;
-gl = document.createElement('canvas').getContext('webgl2');
-declare var ctx: CanvasRenderingContext2D;
-ctx = canvas.getContext('2d');
+let cvs=document.createElement('canvas');
+gl = cvs.getContext('webgl2');
 
 if (!gl) {
     console.log('Webgl-2 not supported');
-    gl = canvas.getContext('webgl');
+    gl = cvs.getContext('webgl');
 }
 
 if (!gl) {
@@ -16,13 +13,13 @@ if (!gl) {
     );
 }
 
-var width = (canvas.width = gl.canvas.width = window.innerWidth);
-var height = (canvas.height = gl.canvas.height = window.innerHeight);
+var width = (gl.canvas.width = window.innerWidth);
+var height = (gl.canvas.height = window.innerHeight);
 gl.viewport(0, 0, width, height);
 
 window.onresize = (ev: UIEvent) => {
-    var width = (canvas.width = gl.canvas.width = window.innerWidth);
-    var height = (canvas.height = gl.canvas.height = window.innerHeight);
+    var width = (gl.canvas.width = window.innerWidth);
+    var height = (gl.canvas.height = window.innerHeight);
     gl.viewport(0, 0, width, height);
 };
 
