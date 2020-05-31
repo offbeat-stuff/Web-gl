@@ -1,5 +1,5 @@
 function assertAndCall(x:object,y:string):boolean{
-    if(HTMLElement[y]&& x instanceof HTMLElement){
+    if(x[y]){
         (x[y] as ()=>any)();
         return true;
     }

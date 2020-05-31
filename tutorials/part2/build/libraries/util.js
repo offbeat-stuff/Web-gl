@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 function assertAndCall(x, y) {
-    if (HTMLElement[y] && x instanceof HTMLElement) {
+    if (x[y]) {
         x[y]();
         return true;
     }
