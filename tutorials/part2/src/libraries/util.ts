@@ -1,10 +1,5 @@
-function hasOwnProperty<X extends {}, Y extends PropertyKey>
-  (obj: X, prop: Y): obj is X & Record<Y, unknown> {
-  return obj.hasOwnProperty(prop)
-}
-
 function assertAndCall(x:object,y:string):boolean{
-    if(hasOwnProperty(HTMLElement.prototype, y)&& x instanceof HTMLElement){
+    if(HTMLElement[y]&& x instanceof HTMLElement){
         (x[y] as ()=>any)();
         return true;
     }
