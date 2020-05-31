@@ -38,7 +38,7 @@ function hasOwnProperty(obj, prop) {
     return obj.hasOwnProperty(prop);
 }
 function assertAndCall(x, y) {
-    if (hasOwnProperty(x, y)) {
+    if (hasOwnProperty(HTMLElement.prototype, y) && x instanceof HTMLElement) {
         x[y]();
         return true;
     }

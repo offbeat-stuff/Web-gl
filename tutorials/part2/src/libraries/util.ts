@@ -4,7 +4,7 @@ function hasOwnProperty<X extends {}, Y extends PropertyKey>
 }
 
 function assertAndCall(x:object,y:string):boolean{
-    if(hasOwnProperty(x,y)){
+    if(hasOwnProperty(HTMLElement.prototype, y)&& x instanceof HTMLElement){
         (x[y] as ()=>any)();
         return true;
     }
